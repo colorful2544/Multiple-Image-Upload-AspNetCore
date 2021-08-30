@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "multiple-image-upload-AspNetCore", "multiple-image-upload-AspNetCore\multiple-image-upload-AspNetCore.csproj", "{69BFFCED-E9CE-4A71-B703-A707A3AEBB75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69BFFCED-E9CE-4A71-B703-A707A3AEBB75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69BFFCED-E9CE-4A71-B703-A707A3AEBB75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69BFFCED-E9CE-4A71-B703-A707A3AEBB75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69BFFCED-E9CE-4A71-B703-A707A3AEBB75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {710574B5-79C0-487B-994E-10C443FAF1BE}
+	EndGlobalSection
+EndGlobal
