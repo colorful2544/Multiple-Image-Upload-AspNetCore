@@ -1,0 +1,20 @@
+﻿@model multiple_image_upload_AspNetCore.ViewModels.UploadViewModel
+
+<div class="container" >
+    <form asp-action="Upload" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Image" class="control-label"></label>
+            <input asp-for="Image" type="file" class="form-control" multiple/>
+            <span asp-validation-for="Image"></span>
+        </div>
+        <div class="form-group mt-3">
+            <button type="submit" class="btn btn-success">บันทึก</button>
+            <button type="button" class="btn btn-danger" >ยกเลิก</button>
+        </div>
+    </form>
+</div>

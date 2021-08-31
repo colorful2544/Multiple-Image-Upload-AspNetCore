@@ -9,6 +9,7 @@ namespace multiple_image_upload_AspNetCore.Models.db
     {
         public int UserId { get; set; }
         public string ImageName { get; set; }
+        public int Id { get; set; }
 
         public virtual User User { get; set; }
     }

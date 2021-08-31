@@ -1,0 +1,24 @@
+﻿@model IEnumerable<multiple_image_upload_AspNetCore.Models.db.Image>
+<div class="container">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.User.Id</td>
+            <td>@item.User.Name</td>
+            <td>
+                <img class="img" src="@Url.Content("~/wwwroot/images/" + @item.ImageName)" width="140">
+            </td>
+        </tr>       
+    }
+  </tbody>
+</table>
+</div>

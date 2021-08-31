@@ -26,7 +26,7 @@ namespace multiple_image_upload_AspNetCore.Models.db
 
             modelBuilder.Entity<Image>(entity =>
             {
-                entity.HasNoKey();
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.ImageName)
                     .IsRequired()
@@ -35,7 +35,7 @@ namespace multiple_image_upload_AspNetCore.Models.db
                 entity.Property(e => e.UserId).HasColumnName("userId");
 
                 entity.HasOne(d => d.User)
-                    .WithMany()
+                    .WithMany(p => p.Images)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Images_Users");
