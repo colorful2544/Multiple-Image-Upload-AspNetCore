@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using multiple_image_upload_AspNetCore.Models.db;
 using multiple_image_upload_AspNetCore.ViewModels;
@@ -34,7 +36,7 @@ namespace multiple_image_upload_AspNetCore.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (string.IsNullOrEmpty(data.Name) || data.Image == null) return View(data);
+                if (string.IsNullOrEmpty(data.Name) || data.Image == null) return View();
 
                 var user = _db.Users.FirstOrDefault(u => u.Name == data.Name);
 
@@ -44,7 +46,7 @@ namespace multiple_image_upload_AspNetCore.Controllers
 
                     foreach(var item in data.Image)
                     {
-                        var fileName = Path.GetFileName(item.Name);
+                        var fileName = Path.GetFileName(item.FileName);
                         var fileExt = Path.GetExtension(fileName);
                         var tmpName = Guid.NewGuid().ToString();
                         var newFileName = string.Concat(tmpName, fileExt);
@@ -75,7 +77,12 @@ namespace multiple_image_upload_AspNetCore.Controllers
                     return NotFound();
                 }
             }
-            return View(data);
+            return View();
+        }
+        public IActionResult SeeImagesOfUser(string id)
+        {
+            var image = _db.Images.Where(i => i.UserId.ToString() == id).Include("User").ToList();
+            return View(image);
         }
     }
 }
